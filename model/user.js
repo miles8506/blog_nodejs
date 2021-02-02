@@ -1,11 +1,7 @@
-const mongoose = require('mongoose'); //
-const { Schema } = mongoose;  // 
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 mongoose.connect('mongodb://localhost/User', { useNewUrlParser: true, useUnifiedTopology: true });
 const UserSchema = new Schema({
-    email: {
-        type: String,
-        required: true
-    },
     nickname: {
         type: String,
         required: true
@@ -14,12 +10,16 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    created_time: {
-        type: Date,
+    email: {
+        type: String,
+        required: true
+    },
+    createdc_time: {
+        type: String,
         default: Date.now
     },
-    last_modified_time: {
-        type: Date,
+    lastEdit_time: {
+        type: String,
         default: Date.now
     },
     avatar: {
@@ -45,28 +45,22 @@ const UserSchema = new Schema({
     }
 });
 module.exports = mongoose.model('User', UserSchema);
-// var admin = new User({
-//     email: 'a123@gmail.com',
-//     nickname: 'miles',
-//     password: 'a123456'
-// });
-// admin.save((err, data) => {
+// const User = mongoose.model('User', UserSchema);
+// User.deleteMany((err, res) => {
 //     if (err) {
-//         return console.log('err');
+//         return console.log(err);
 //     }
-//     console.log(data);
-//     console.log('成功');
+//     console.log(res);
 // })
-// User.findOne(({ email: 'a123@gmail.com' }), (err, data) => {
+
+// User.findByIdAndUpdate(({
+//     email: 'a123@gmail.com'
+// }), ({
+//     password: '123456'
+// }), (err, data) => {
 //     if (err) {
-//         return console.log('err');
+//         console.log(err.message);
 //     }
 //     console.log(data);
 // })
 
-// User.deleteMany((err, data) => {
-//     if (err) {
-//         return console.log('err');
-//     };
-//     console.log('成功');
-// })

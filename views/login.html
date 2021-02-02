@@ -11,7 +11,7 @@
 <body>
   <div class="main">
     <div class="header">
-      <a href="/" style="font-size: 25px;">
+      <a href="/" style="font-size: 25px">
         Node.js_Blog
       </a>
       <h1>用戶登錄</h1>
@@ -24,7 +24,7 @@
       <div class="form-group">
         <label for="">密碼</label>
         <a class="pull-right" href="">忘記密碼？</a>
-        <input type="password" class="form-control" id="passowrd" name="password" placeholder="Password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
       </div>
       <div class="checkbox">
         <label>
@@ -38,27 +38,8 @@
     </div>
   </div>
   <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script src="/public/js/login.js"></script>
   <script>
-    $('#login_form').on('submit', function (e) {
-      e.preventDefault();
-      const formData = $(this).serialize();
-      $.ajax({
-        url: '/login',
-        type: 'post',
-        data: formData,
-        dataType: 'json',
-        success: function (data) {
-          if (data.status === 0) {
-            window.alert('伺服器忙線中，請稍後再試');
-          } else if (data.status === 1) {
-            window.alert('登入失敗，請重新再試');
-          } else if (data.status === 2) {
-            window.alert('登入成功');
-            window.location.href = '/';
-          };
-        }
-      });
-    })
   </script>
 </body>
 

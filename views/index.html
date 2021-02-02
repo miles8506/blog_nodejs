@@ -1,10 +1,11 @@
 {{extend './_layouts/home.html'}}
 
-{{block 'title'}}{{'Blog - 首頁'}}{{/block}}
+{{block 'title'}}{{'Blog'}}{{/block}}
 
 {{block 'body'}}
 <section class="container">
   <ul class="media-list">
+    {{ each article }}
     <li class="media">
       <div class="media-left">
         <a href="#">
@@ -12,187 +13,11 @@
         </a>
       </div>
       <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
+        <h4 class="media-heading"><a href="/topics/show?id={{$value._id }}">{{ $value.title }}</a></h4>
+        <p>發文者:{{$value.nickname}} • 2 人關注 • 1 人回覆 • {{ $value.views }} 次瀏覽 • {{ $value.created_time }}</p>
       </div>
     </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-    <li class="media">
-      <div class="media-left">
-        <a href="#">
-          <img width="40" height="40" class="media-object" src="../public/img/avatar-default.png" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="/topics/123">Media heading</a></h4>
-        <p>mles 回覆了問題 • 2 人關注 • 1 人回覆 • 187 次瀏覽 • 2020-10-20 13:45</p>
-      </div>
-    </li>
-
+    {{ /each }}
   </ul>
   <nav aria-label="Page navigation">
     <ul class="pagination">
@@ -215,3 +40,6 @@
   </nav>
 </section>
 {{/block}}
+<!-- 待完成功能
+1.每則文章的追蹤點擊數據
+-->

@@ -6,27 +6,29 @@
 <section class="container">
   <div class="row">
     <div class="col-md-5">
-      <form>
+      <form id="new_form">
         <div class="form-group">
-          <label for="exampleInputEmail1">选择板块</label>
-          <select class="form-control">
-            <option>分享</option>
-            <option>问答</option>
-            <option>招聘</option>
-            <option>客户端测试</option>
+          <label for="exampleInputEmail1">選擇分類</label>
+          <select class="form-control" name="classes">
+            <option value="1">分享</option>
+            <option value="2">問答</option>
+            <option value="3">招聘</option>
+            <option value="4">客戶端測試</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">标题</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          <label for="exampleInputEmail1">標題</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="標題" name="title">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">内容</label>
-          <textarea class="form-control" rows="3"></textarea>
+          <label for="exampleInputPassword1">內容</label>
+          <textarea class="form-control" rows="3" name="content"></textarea>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">發文</button>
       </form>
     </div>
   </div>
 </section>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/public/js/new.js"></script>
 {{/block}}

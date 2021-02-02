@@ -6,50 +6,54 @@
 <section class="container">
   {{include '../_partials/settings-nav.html'}}
   <div class="col-md-5">
-    <form>
+    <form id="profile_form">
       <div class="form-group">
         <label for="exampleInputEmail1">帳號</label>
-        <p class="form-control-static">email@example.com</p>
+        <p class="form-control-static">{{ user.email }}</p>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">暱稱</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+        <input type="text" class="form-control" id="exampleInputPassword1" name="nickname" placeholder=""
+          value="{{ user.nickname }}">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">介绍</label>
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea class="form-control" rows="3" name="bio" value="{{ user.bio }}"></textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">性别</label>
         <div>
           <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男
+            <input type="radio" name="gender" id="inlineRadio1" value="0"> 男
           </label>
           <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+            <input type="radio" name="gender" id="inlineRadio2" value="1"> 女
           </label>
           <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 保密
+            <input type="radio" name="gender" id="inlineRadio3" value="-1"> 保密
           </label>
         </div>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">生日</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name="birthday"
+          value="{{ user.birthday }}">
       </div>
       <button type="submit" class="btn btn-success">保存</button>
     </form>
   </div>
   <div class="col-md-2 profile-avatar">
     <dl>
-      <dt>頭像設置</dt>
+      <dt>頭像</dt>
       <dd>
-        <img class="avatar" width="150" height="150" src="../public/img/avatar-max-img.png" alt="">
-        <div>
+        <img class="avatar" width="150" height="150" src="/public/img/avatar-default.png" alt="">
+        <!-- <div>
           <button class="btn btn-default" href="">Upload new picture</button>
-        </div>
+        </div> -->
       </dd>
     </dl>
   </div>
 </section>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/public/js/profile.js"></script>
 {{/block}}
